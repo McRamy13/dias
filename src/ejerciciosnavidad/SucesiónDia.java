@@ -16,8 +16,10 @@ public class SucesiónDia extends javax.swing.JFrame {
     /**
      * Creates new form SucesiónDia
      */
+    String dia = "";
     public SucesiónDia() {
         initComponents();
+        
     }
 
     /**
@@ -73,48 +75,43 @@ public class SucesiónDia extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Random generadorDias = new Random();
 
-        for (int i = 0; i < 7; i++) {
+        int generadorDias2 = generadorDias.nextInt(7);
 
-            int sucesionDias = generadorDias.nextInt(7);
-            String lista = String.valueOf(sucesionDias);
-            
-            if (lista.charAt(1) != sucesionDias) {
-                jTextArea1.append(String.valueOf(lista.charAt(1)));
-            } else {
-                if (lista.charAt(2) != sucesionDias) {
-                    jTextArea1.append(String.valueOf(lista.charAt(2)));
-                } else {
+        int dias2 = generadorDias2;
 
-                }
-                if (lista.charAt(3) != sucesionDias) {
-                    jTextArea1.append(String.valueOf(lista.charAt(3)));
-                } else {
+        
 
-                }
-                if (lista.charAt(4) != sucesionDias) {
-                    jTextArea1.append(String.valueOf(lista.charAt(4)));
-                } else {
-                    if (lista.charAt(5) != sucesionDias) {
-                        jTextArea1.append(String.valueOf(lista.charAt(5)));
-                    } else {
+        do {
+            switch (generadorDias2) {
+                case 0:
+                    dia = "Lunes";
+                    break;
 
-                    }
-                    if (lista.charAt(6) != sucesionDias) {
-                        jTextArea1.append(String.valueOf(lista.charAt(6)));
-                    } else {
-                    }
-                    if (lista.charAt(7) != sucesionDias) {
+                case 1:
+                    dia = "Martes";
+                    break;
+                case 2:
+                    dia = "Miércoles";
+                    break;
+                case 3:
+                    dia = "Jueves";
+                    break;
+                case 4:
+                    dia = "Viernes";
+                    break;
 
-                        jTextArea1.append(String.valueOf(lista.charAt(7)));
-                    }
-                }
-
-                jTextArea1.append(String.valueOf(sucesionDias));
-
+                case 5:
+                    dia = "Sábado";
+                    break;
+                case 6:
+                    dia = "Domingo";
+                    break;
+                default: 
+                    jTextArea1.append("Dia Erróneo");
             }
-        }
+        } while (generadorDias2 != dias2);
 
-
+        jTextArea1.append(dia + "\n");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
